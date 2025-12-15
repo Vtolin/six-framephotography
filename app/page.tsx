@@ -10,12 +10,12 @@ const Animated = ({
   delay = 0, 
   animation = "fade-up" 
 }: {
-  children: React.ReactNode;
-  className?: string;
-  delay?: number;
+  children: React.ReactNode
+  className?: string
+  delay?: number
   animation?: "fade-up" | "fade-left" | "fade-right" | "fade-in";
 }) => {
-  const { ref, inView } = useInView();
+  const { ref, inView } = useInView()
   
   const baseClasses = "transition-all duration-700 ease-out will-change-transform";
   const visibleClasses = "opacity-100 translate-x-0 translate-y-0 scale-100";
@@ -34,8 +34,8 @@ const Animated = ({
     >
       {children}
     </div>
-  );
-};
+  )
+}
 
 export default function Home() {
   return (
@@ -237,7 +237,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* 5. PORTFOLIO PREVIEW - Masonry Grid */}
+        {/* 5. Portfolio section, Masonry Grid */}
         <section className="py-20 md:py-32">
           <div className="max-w-7xl mx-auto px-6">
             <Animated animation="fade-up" delay={0}>
@@ -263,13 +263,11 @@ export default function Home() {
                 <Animated key={index} delay={100 + index * 100} animation="fade-up">
                   <div className="group relative overflow-hidden rounded-xl cursor-pointer">
                     <div className={`${item.height} bg-gray-200 relative overflow-hidden`}>
-                      {/* Replace with actual images */}
                       <div className="absolute inset-0 bg-linear-to-t from-black/60 via-transparent to-transparent z-10"></div>
                       <div className="absolute inset-0 transform transition-transform duration-500 group-hover:scale-110">
                         {/* <Image src={`/portfolio-${index}.jpg`} alt={item.title} fill className="object-cover" /> */}
                       </div>
                       
-                      {/* Hover overlay */}
                       <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20 flex items-center justify-center">
                         <div className="text-center text-white transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
                           <p className="text-xs uppercase tracking-wider mb-2">{item.category}</p>
@@ -294,25 +292,8 @@ export default function Home() {
             </Animated>
           </div>
         </section>
-        {/* 6. INVESTMENT SECTION */}
-        <section className="py-24 bg-gray-900 text-white text-center">
-          <Animated animation="fade-up">
-            <h2 className="font-serif text-4xl mb-6">Investasi</h2>
-          </Animated>
-
-          <Animated animation="fade-up" delay={200}>
-            <p className="text-gray-300 max-w-2xl mx-auto mb-10">
-              Paket fotografi dan videografi yang dirancang untuk mengabadikan momen berharga Anda, termasuk editing profesional, galeri online, dan konsultasi pribadi.
-            </p>
-          </Animated>
-
-          <Animated animation="fade-up" delay={400}>
-            <button className="bg-white text-gray-900 px-10 py-4 uppercase tracking-wider font-medium hover:shadow-xl transition">
-              Lihat Harga
-            </button>
-          </Animated>
-        </section>
       </main>
+      <Footer />
     </>
   );
 }
