@@ -43,50 +43,62 @@ export default function Home() {
       <Taskbar />
       <main className="font-sans antialiased">
         {/* 1. Hero Section */}
-<section className="relative h-screen min-h-[600px] overflow-hidden">
+        <section className="relative h-screen min-h-[600px] overflow-hidden">
+          {/* Video Background */}
           <div className="absolute inset-0 z-0">
-            <video autoPlay muted loop playsInline className="w-full h-full object-cover opacity-80">
+            <video
+              autoPlay
+              muted
+              loop
+              playsInline
+              className="w-full h-full object-cover opacity-80"
+            >
               <source src="/hero-video.mp4" type="video/mp4" />
             </video>
+            {/* Gradient Overlay */}
             <div className="absolute inset-0 bg-linear-to-b from-black/40 via-black/20 to-black/60"></div>
           </div>
           
+          {/* Hero Content */}
           <div className="relative z-10 flex items-center justify-center h-full px-4 sm:px-6 lg:px-8">
             <div className="max-w-5xl mx-auto text-center text-white">
-              <Animated animation="fade-in">
+              <Animated animation="fade-in" delay={0}>
                 <h1 className="font-serif text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-normal tracking-tight mb-3 sm:mb-4">
                   Delta Frame
                 </h1>
               </Animated>
-
               <Animated animation="fade-in" delay={200}>
                 <p className="font-light text-lg sm:text-xl md:text-2xl lg:text-3xl tracking-wide uppercase mb-6 sm:mb-8">
-                  Fotografi & Film
+                  Photography & Film
                 </p>
               </Animated>
-
               <Animated animation="fade-in" delay={400}>
                 <div className="w-20 sm:w-24 h-px bg-white/60 mx-auto mb-6 sm:mb-8"></div>
               </Animated>
-
               <Animated animation="fade-in" delay={600}>
                 <p className="font-light text-base sm:text-lg md:text-xl mb-8 sm:mb-12 max-w-2xl mx-auto leading-relaxed px-2">
-                  Mengabadikan momen paling berharga dengan keindahan yang abadi
+                  Capturing life's most precious moments with timeless elegance
                 </p>
               </Animated>
-
               <Animated animation="fade-in" delay={800}>
                 <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center px-4">
-                  <button className="group relative overflow-hidden bg-white text-black px-6 sm:px-8 py-3 sm:py-4 text-sm font-medium tracking-wider uppercase transition-all duration-300 hover:-translate-y-1 hover:shadow-xl min-h-11">
-                    <span className="relative z-10">Lihat Portofolio</span>
+                  <button className="group relative overflow-hidden bg-white text-black px-6 sm:px-8 py-3 sm:py-4 text-sm font-medium tracking-wider uppercase transition-all duration-300 hover:-translate-y-0.5 sm:hover:-translate-y-1 hover:shadow-xl min-h-11">
+                    <span className="relative z-10">View Portfolio</span>
                     <span className="absolute inset-0 bg-black/10 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
                   </button>
-                  <button className="group border-2 border-white text-white px-6 sm:px-8 py-3 sm:py-4 text-sm font-medium tracking-wider uppercase transition-all duration-300 hover:bg-white hover:text-black hover:-translate-y-1 min-h-11">
-                    Hubungi Kami
+                  <button className="group border-2 border-white text-white px-6 sm:px-8 py-3 sm:py-4 text-sm font-medium tracking-wider uppercase transition-all duration-300 hover:bg-white hover:text-black hover:-translate-y-0.5 sm:hover:-translate-y-1 min-h-11">
+                    Get In Touch
                   </button>
                 </div>
               </Animated>
             </div>
+          </div>
+          
+          {/* Scroll Indicator(Hidden on small screens) */}
+          <div className="absolute bottom-6 sm:bottom-8 left-1/2 -translate-x-1/2 text-white animate-bounce hidden sm:block">
+            <svg className="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+            </svg>
           </div>
         </section>
 
@@ -110,28 +122,25 @@ export default function Home() {
         <section className="py-16 md:py-24 lg:py-32 max-w-6xl mx-auto px-4 sm:px-6">
           <div className="grid md:grid-cols-2 gap-8 lg:gap-16 items-center">
             <div className="order-2 md:order-1">
-              <Animated animation="fade-up">
-                <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl mb-6 text-gray-900">
-                  Merangkai Cerita Visual
+              <Animated animation="fade-up" delay={0}>
+                <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-normal mb-6 md:mb-8 text-gray-900">
+                  Crafting Visual Stories
                 </h2>
               </Animated>
-
               <Animated animation="fade-up" delay={200}>
-                <p className="text-gray-600 leading-relaxed text-lg mb-6">
-                  Kami adalah studio fotografi dan videografi butik yang berfokus pada pengabadian momen-momen berharga. Mulai dari pernikahan intim hingga acara motorsport komersial, kami memadukan keahlian teknis dengan visi artistik.
+                <p className="text-gray-600 leading-relaxed text-base sm:text-lg mb-4 md:mb-6">
+                  We are a boutique photography and videography studio dedicated to capturing life's most precious moments. From intimate weddings to commercial motorsport events, we blend technical expertise with artistic vision.
                 </p>
               </Animated>
-
               <Animated animation="fade-up" delay={400}>
-                <p className="text-gray-600 leading-relaxed text-lg mb-8">
-                  Setiap karya dibuat dengan niat, emosi, dan komitmen penuh terhadap kualitas untuk menceritakan kisah Anda secara autentik dan berkelas.
+                <p className="text-gray-600 leading-relaxed text-base sm:text-lg mb-6 md:mb-8">
+                  Our team specializes in creating stunning visuals that tell your unique story with timeless elegance. Every frame is crafted with intention, emotion, and an unwavering commitment to excellence.
                 </p>
               </Animated>
-
               <Animated animation="fade-up" delay={600}>
-                <button className="group inline-flex items-center text-gray-900 font-medium pb-2 border-b-2 border-gray-900 transition-all hover:text-gray-600 hover:border-gray-600">
-                  Pelajari Lebih Lanjut
-                  <svg className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <button className="group inline-flex items-center text-gray-900 font-medium pb-2 border-b-2 border-gray-900 transition-all duration-300 hover:text-gray-600 hover:border-gray-600">
+                  Learn More About Us
+                  <svg className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                   </svg>
                 </button>
@@ -166,10 +175,10 @@ export default function Home() {
             <Animated animation="fade-up" delay={0}>
               <div className="text-center mb-12 md:mb-16">
                 <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-normal mb-3 md:mb-4 text-gray-900">
-                  Layanan Kami
+                  Our Services
                 </h2>
                 <p className="text-gray-600 text-base sm:text-lg max-w-2xl mx-auto">
-                 Solusi visual menyeluruh yang disesuaikan dengan kebutuhan Anda
+                  Comprehensive visual storytelling tailored to your unique needs
                 </p>
               </div>
             </Animated>
@@ -177,34 +186,34 @@ export default function Home() {
             <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8">
               {[
                 { 
-                  title: "Fotografi Pernikahan", 
-                  desc: "Foto romantis, natural, dan timeless untuk hari istimewa Anda",
-                  price: "Mulai dari Rp700,000"
+                  title: "Wedding Photography", 
+                  desc: "Romantic, candid, timeless shots that capture your love story",
+                  price: "Starting at $50"
                 },
                 { 
-                  title: "Videografi", 
-                  desc: "Film sinematik yang menghidupkan momen",
-                  price: "Mulai dari Rp1,000,000"
+                  title: "Videography", 
+                  desc: "Cinematic films that bring your moments to motion",
+                  price: "Starting at $100"
                 },
                 { 
-                  title: "Sesi Potret", 
-                  desc: "Branding pribadi, keluarga, dan gaya hidup",
-                  price: "Mulai dari Rp400,000"
+                  title: "Portrait Sessions", 
+                  desc: "Personal branding, family, and lifestyle photography",
+                  price: "Starting at $40"
                 },
                 { 
-                  title: "Acara & Event", 
-                  desc: "Acara selebrasi dan perayaan spesial",
-                  price: "Mulai dari Rp900,000"
+                  title: "Event Coverage", 
+                  desc: "Corporate events, celebrations, and special occasions",
+                  price: "Starting at $50"
                 },
                 { 
-                  title: "Liputan Motorsport", 
-                  desc: "Liputan profesional terfokus untuk event balap & otomotif",
-                  price: "Mulai dari Rp1,800,000"
+                  title: "Motorsport Commercial", 
+                  desc: "Specialized coverage for racing and automotive events",
+                  price: "Starting at $120"
                 },
                 { 
-                  title: "Editing", 
-                  desc: "Layanan Retouching & color grading profesional",
-                  price: "Mulai dari Rp75,000"
+                  title: "Editing & Post-Production", 
+                  desc: "Professional retouching and color grading services",
+                  price: "Starting at $5"
                 },
               ].map((service, index) => (
                 <Animated key={service.title} delay={100 + index * 100} animation="fade-up">
@@ -295,22 +304,25 @@ export default function Home() {
           </div>
         </section>
         {/* 6. INVESTMENT SECTION */}
-        <section className="py-24 bg-gray-900 text-white text-center">
-          <Animated animation="fade-up">
-            <h2 className="font-serif text-4xl mb-6">Investasi</h2>
-          </Animated>
-
-          <Animated animation="fade-up" delay={200}>
-            <p className="text-gray-300 max-w-2xl mx-auto mb-10">
-              Paket fotografi dan videografi yang dirancang untuk mengabadikan momen berharga Anda, termasuk editing profesional, galeri online, dan konsultasi pribadi.
-            </p>
-          </Animated>
-
-          <Animated animation="fade-up" delay={400}>
-            <button className="bg-white text-gray-900 px-10 py-4 uppercase tracking-wider font-medium hover:shadow-xl transition">
-              Lihat Harga
-            </button>
-          </Animated>
+        <section className="py-16 md:py-24 lg:py-32 bg-gray-900 text-white">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
+            <Animated animation="fade-up" delay={0}>
+              <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-normal mb-6 md:mb-8">
+                Investment
+              </h2>
+            </Animated>
+            <Animated animation="fade-up" delay={200}>
+              <p className="text-base sm:text-lg text-gray-300 mb-8 md:mb-12 leading-relaxed px-2">
+                Photography and videography packages designed to preserve your most precious memories. 
+                Each collection includes professional editing, an online gallery, and personal consultation.
+              </p>
+            </Animated>
+            <Animated animation="fade-up" delay={400}>
+              <button className="bg-white text-gray-900 px-8 md:px-10 py-3 md:py-4 text-sm font-medium tracking-wider uppercase transition-all duration-300 hover:bg-gray-100 hover:-translate-y-0.5 md:hover:-translate-y-1 hover:shadow-xl min-h-11">
+                View Pricing
+              </button>
+            </Animated>
+          </div>
         </section>
       </main>
     </>

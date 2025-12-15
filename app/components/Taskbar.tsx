@@ -1,6 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { Menu, X } from "lucide-react";
 import { usePathname } from "next/navigation";
 
@@ -42,16 +43,21 @@ export default function Taskbar() {
         }`}
       >
         <div className="max-w-7xl mx-auto flex justify-between items-center px-4 sm:px-6 lg:px-8">
-          {/* Logo - Responsive sizing */}
+          {/* Logo, Responsive sizing */}
           <Link 
             href="/" 
             className={`font-serif font-medium tracking-tight text-gray-900 hover:text-gray-600 transition-colors
             ${isScrolled ? "text-xl" : "text-2xl"}`}
           >
-            Delta Frame
+            <Image
+              src="/logo.png"
+              alt="Logo"
+              width={50}
+              height={50}
+            />
           </Link>
 
-          {/* Desktop Nav - Enhanced spacing and interactions */}
+          {/* Desktop Nav,  Enhanced spacing and interactions */}
           <div className="hidden md:flex items-center gap-8 lg:gap-10">
             {navLinks.map((link) => {
               const isActive = pathname === link.href;
@@ -73,7 +79,7 @@ export default function Taskbar() {
             })}
           </div>
 
-          {/* Mobile Button - Larger touch target */}
+          {/* Mobile Button, Larger touch target */}
           <button
             onClick={toggleMenu}
             aria-label="Toggle menu"
@@ -84,7 +90,7 @@ export default function Taskbar() {
         </div>
       </nav>
 
-      {/* FULL-SCREEN MOBILE MENU - Fluid animations */}
+      {/* FULL SCREEN MOBILE MENU, Fluid animations */}
       <div
         className={`fixed inset-0 z-50 bg-white/98 backdrop-blur-xl transition-all duration-500 md:hidden
         ${isMenuOpen ? "opacity-100 visible" : "opacity-0 invisible"}`}
@@ -126,7 +132,7 @@ export default function Taskbar() {
           </div>
         </div>
         
-        {/* Close Button - Fixed position */}
+        {/* Close Button, Fixed position */}
         <button
           onClick={() => setIsMenuOpen(false)}
           aria-label="Close menu"

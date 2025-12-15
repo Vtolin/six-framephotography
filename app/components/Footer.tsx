@@ -10,4 +10,6 @@ export default function Footer() {
           </button>
         </section>
     )
-}                
+}
+
+{/* Currently Unused */}
