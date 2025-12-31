@@ -40,69 +40,95 @@ const Animated = ({
   );
 };
 
-const items = [
-  { src: "/p1.jpg", ratio: "aspect-[4/5]", title: "Wedding — Intimate" },
-  { src: "/p2.jpg", ratio: "aspect-video", title: "Motorsport — Track Day" },
-  { src: "/p3.jpg", ratio: "aspect-[9/16]", title: "Portrait — Editorial" },
-  { src: "/p4.jpg", ratio: "aspect-[21/9]", title: "Commercial — Brand" },
-  { src: "/p5.jpg", ratio: "aspect-[3/4]", title: "Wedding — Moment" },
-  { src: "/p6.jpg", ratio: "aspect-square", title: "Lifestyle" },
+interface PortfolioItem {
+  src: string;
+  title: string;
+  width: number;
+  height: number;
+}
+
+const items: PortfolioItem[] = [
+  // Portraits & Editorial
+  { src: "/photos/p1.jpeg", title: "Model — Portrait", width: 800, height: 1000 },
+  { src: "/photos/p4.jpeg", title: "Candid", width: 1200, height: 800 },
+  { src: "/photos/p8.jpeg", title: "Event coverage", width: 900, height: 600 },
+  { src: "/photos/p13.jpeg", title: "Bike", width: 1000, height: 1000 },
+  { src: "/photos/p11.jpg", title: "Candid Portrait", width: 800, height: 1067 },
+  { src: "/photos/p2.jpeg", title: "Event shot", width: 1200, height: 900 },
+  
+  // Architecture & Landscape
+  { src: "/photos/p6.jpeg", title: "Event coverage", width: 1400, height: 800 },
+  { src: "/photos/p9.jpeg", title: "Automotive", width: 1000, height: 750 },
+  { src: "/p9.jpg", title: "Real Estate — Interior", width: 900, height: 1200 },
+  
+  // Events & Sports
+  { src: "/photos/p10.jpeg", title: "Automotive - Ferrari 812", width: 1200, height: 675 },
+  { src: "/photos/p3.jpeg", title: "Fast Action — Panning", width: 1100, height: 800 },
+  { src: "/p12.jpg", title: "Concert — Live Music", width: 800, height: 1200 },
+  
+  // Commercial & Product
+  { src: "/photos/p12.jpeg", title: "Wide angle shot", width: 1000, height: 1000 },
+  { src: "/p14.jpg", title: "Food — Culinary Art", width: 1200, height: 900 },
+  { src: "/p15.jpg", title: "Fashion — Lookbook", width: 800, height: 1200 },
 ];
 
 export default function PortfolioPage() {
   return (
-  <>
-    <Taskbar />
-    <main className="font-sans antialiased">
-      {/* 1. Editorial Intro */}
-      <section className="py-32 md:py-40 bg-white">
-        <div className="max-w-6xl mx-auto px-6">
-          <Animated animation="fade-in">
-            <h1 className="font-serif text-5xl sm:text-6xl md:text-7xl text-gray-900 mb-6">
-              Portfolio
-            </h1>
-          </Animated>
-          <Animated animation="fade-in" delay={200}>
-            <p className="text-gray-600 text-lg max-w-2xl">
-              Pilihan karya yang mewakili pendekatan visual, karakter, dan
-              konsistensi Delta Frame.
-            </p>
-          </Animated>
-        </div>
-      </section>
+    <>
+      <Taskbar />
+      <main className="font-sans antialiased">
+        {/* 1. Editorial Intro */}
+        <section className="py-32 md:py-40 bg-white">
+          <div className="max-w-6xl mx-auto px-6">
+            <Animated animation="fade-in">
+              <h1 className="font-serif text-5xl sm:text-6xl md:text-7xl text-gray-900 mb-6">
+                Portfolio
+              </h1>
+            </Animated>
+            <Animated animation="fade-in" delay={200}>
+              <p className="text-gray-600 text-lg max-w-2xl">
+                Pilihan karya yang mewakili pendekatan visual, karakter, dan
+                konsistensi Delta Frame.
+              </p>
+            </Animated>
+          </div>
+        </section>
 
-      {/* 2. Adaptive Grid */}
-      <section className="pb-32">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="columns-1 sm:columns-2 lg:columns-3 gap-6 space-y-6">
-            {items.map((item, index) => (
-              <Animated key={index} delay={index * 100}>
-                <div className="group relative break-inside-avoid overflow-hidden rounded-xl bg-gray-100">
-                  <div className={`${item.ratio} relative overflow-hidden`}>
-                    <Image
-                      src={item.src}
-                      alt={item.title}
-                      fill
-                      className="object-cover transition-transform duration-700 group-hover:scale-105"
-                    />
-                  </div>
+        {/* 2. Adaptive Grid */}
+        <section className="pb-32">
+          <div className="max-w-7xl mx-auto px-6">
+            <div className="columns-1 sm:columns-2 lg:columns-3 gap-6 space-y-6">
+              {items.map((item, index) => (
+                <Animated key={index} delay={index * 100}>
+                  <div className="group relative break-inside-avoid overflow-hidden rounded-xl bg-gray-100">
+                    {/* Image Container */}
+                    <div className="relative">
+                      <Image
+                        src={item.src}
+                        alt={item.title}
+                        width={item.width}
+                        height={item.height}
+                        className="w-full h-auto block transition-transform duration-700 group-hover:scale-105"
+                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                      />
+                    </div>
 
-                  {/* Overlay */}
-                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/50 transition-colors duration-300 flex items-end">
-                    <div className="p-6 w-full">
-                      <p className="text-white text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        {item.title}
-                      </p>
+                    {/* Overlay */}
+                    <div className="absolute inset-0 bg-black/0 group-hover:bg-black/50 transition-colors duration-300 flex items-end">
+                      <div className="p-6 w-full">
+                        <p className="text-white text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                          {item.title}
+                        </p>
+                      </div>
                     </div>
                   </div>
-                </div>
-              </Animated>
-            ))}
+                </Animated>
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
-    </main>
-    <Footer />
+        </section>
+      </main>
+      <Footer />
     </>
   );
 }

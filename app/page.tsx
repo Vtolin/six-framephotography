@@ -212,7 +212,7 @@ export default function Home() {
               <div className="relative group">
                 <div className="relative aspect-4/5 max-w-md mx-auto md:max-w-none">
                   <Image
-                    src="/about.jpg"
+                    src="/test.jpg"
                     alt="Photo 1"
                     fill
                     className="object-cover rounded-lg shadow-2xl transition-transform duration-500 group-hover:scale-105"
