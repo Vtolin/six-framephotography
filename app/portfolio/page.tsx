@@ -48,7 +48,6 @@ interface PortfolioItem {
 }
 
 const items: PortfolioItem[] = [
-  // Portraits & Editorial
   { src: "/photos/p1.jpeg", title: "Model — Portrait", width: 800, height: 1000 },
   { src: "/photos/p4.jpeg", title: "Candid", width: 1200, height: 800 },
   { src: "/photos/p8.jpeg", title: "Event coverage", width: 900, height: 600 },
@@ -56,20 +55,17 @@ const items: PortfolioItem[] = [
   { src: "/photos/p11.jpg", title: "Candid Portrait", width: 800, height: 1067 },
   { src: "/photos/p2.jpeg", title: "Event shot", width: 1200, height: 900 },
   
-  // Architecture & Landscape
   { src: "/photos/p6.jpeg", title: "Event coverage", width: 1400, height: 800 },
   { src: "/photos/p9.jpeg", title: "Automotive", width: 1000, height: 750 },
-  { src: "/p9.jpg", title: "Real Estate — Interior", width: 900, height: 1200 },
+  { src: "/photos/p17.jpeg", title: "Portrait", width: 900, height: 1200 },
   
-  // Events & Sports
-  { src: "/photos/p10.jpeg", title: "Automotive - Ferrari 812", width: 1200, height: 675 },
+  { src: "/photos/p16.jpg", title: "Automotive - Ferrari 812", width: 1200, height: 675 },
   { src: "/photos/p3.jpeg", title: "Fast Action — Panning", width: 1100, height: 800 },
-  { src: "/p12.jpg", title: "Concert — Live Music", width: 800, height: 1200 },
+  { src: "/photos/p151.png", title: "Automotive", width: 800, height: 1200 },
   
-  // Commercial & Product
   { src: "/photos/p12.jpeg", title: "Wide angle shot", width: 1000, height: 1000 },
-  { src: "/p14.jpg", title: "Food — Culinary Art", width: 1200, height: 900 },
-  { src: "/p15.jpg", title: "Fashion — Lookbook", width: 800, height: 1200 },
+  { src: "/photos/p14.jpg", title: "Automotive", width: 1200, height: 900 },
+  { src: "/photos/p19.jpeg", title: "Model Portrait", width: 800, height: 1200 },
 ];
 
 export default function PortfolioPage() {
