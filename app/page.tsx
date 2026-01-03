@@ -306,13 +306,10 @@ export default function Home() {
                       <p className="text-gray-600 leading-relaxed mb-3 lg:mb-4 text-sm sm:text-base">
                         {service.desc}
                       </p>
-                      <p className="text-sm font-medium text-gray-900">
-                        {service.price}
-                      </p>
                     </div>
-                    {/* <button className="text-sm font-medium text-gray-900 pb-1 border-b-2 border-gray-900 transition-all duration-300 group-hover:text-gray-600 group-hover:border-gray-600">
-                      Learn More
-                    </button> */}
+                    <button className="text-sm cursor-pointer font-medium text-gray-900 pb-1 border-b-2 border-gray-900 transition-all duration-300 group-hover:text-gray-600 group-hover:border-gray-600">
+                    <a href="/contact">Cek Ketersediaan Tanggal & Konsultasi</a> 
+                    </button> 
                   </div>
                 </Animated>
               ))}

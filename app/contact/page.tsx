@@ -172,7 +172,9 @@ export default function ContactPage() {
                       WhatsApp
                     </p>
                     <p className="text-gray-900 text-lg">
-                      +62 8570 5243 706
+                      <a href="https://wa.me/6285705243706" target="_blank" rel="noopener noreferrer">
+                        +62 8570 5243 706
+                      </a>
                     </p>
                   </li>
                   <li>
