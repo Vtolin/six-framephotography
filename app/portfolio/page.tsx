@@ -59,7 +59,7 @@ const items: PortfolioItem[] = [
   { src: "/photos/p9.jpeg", title: "Automotive", width: 1000, height: 750 },
   { src: "/photos/p17.jpeg", title: "Portrait", width: 900, height: 1200 },
   
-  { src: "/photos/p16.jpg", title: "Automotive - Ferrari 812", width: 1200, height: 675 },
+  { src: "/photos/p16.jpg", title: "Superbike", width: 1200, height: 675 },
   { src: "/photos/p3.jpeg", title: "Fast Action — Panning", width: 1100, height: 800 },
   { src: "/photos/p151.png", title: "Automotive", width: 800, height: 1200 },
   
@@ -71,7 +71,7 @@ const items: PortfolioItem[] = [
 export default function PortfolioPage() {
   return (
     <>
-      <Taskbar />
+      <Taskbar /> ""
       <main className="font-sans antialiased">
         {/* 1. Editorial Intro */}
         <section className="py-32 md:py-40 bg-white">

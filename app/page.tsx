@@ -250,7 +250,7 @@ export default function Home() {
                 {
                   title: "Fotografi Pernikahan",
                   desc: "Foto romantis, natural, dan timeless untuk hari istimewa Anda (Sudah Termasuk Editing)",
-                  price: "Mulai dari Rp700,000",
+                  price: "Mulai dari Rp750,000",
                 },
                 {
                   title: "Videografi",
@@ -260,7 +260,7 @@ export default function Home() {
                 {
                   title: "Sesi Potret",
                   desc: "Branding pribadi, keluarga, dan lifestyle (Sudah Termasuk Editing)",
-                  price: "Mulai dari Rp400,000",
+                  price: "Mulai dari Rp425,000",
                 },
                 {
                   title: "Acara & Event",
@@ -308,7 +308,7 @@ export default function Home() {
                       </p>
                     </div>
                     <button className="text-sm cursor-pointer font-medium text-gray-900 pb-1 border-b-2 border-gray-900 transition-all duration-300 group-hover:text-gray-600 group-hover:border-gray-600">
-                    <a href="/contact">Cek Ketersediaan Tanggal & Konsultasi</a> 
+                    <a href="/contact">{service.price}</a> 
                     </button> 
                   </div>
                 </Animated>
